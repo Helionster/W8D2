@@ -47,12 +47,15 @@ Array.prototype.transpose = function(array) {
 
 [[0, 1, 2], [3, 4, 5], [6, 7, 8]].transpose()
 
-let callback = function(array) {
+Array.prototype.myEach = function(callback) {
     for(let i = 0; i < this.length; i++) {
-        console.log(this[i])
+        callback(this[i], i, this);
     }
 }
 
-Array.prototype.myEach = function(callback) {
+[1,2,3,4,5,6,7].myEach(function (element) {console.log(element)});
+
+Array.prototype.myMap = function(callback) {
     
 }
+
